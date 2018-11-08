@@ -1,0 +1,2 @@
+camera_pseudo:excercise_1:prediction
+-DCATKIN_DEVEL_PREFIX=/home/laura/PycharmProjects/Robotik_KI_Exercise/excercise_1/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/laura/PycharmProjects/Robotik_KI_Exercise/excercise_1/catkin_ws/install -G Unix Makefiles
