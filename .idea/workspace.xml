@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5db56143-9989-4531-aa36-139db138ac66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excercise_1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/excercise_1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py" beforeDir="false" afterPath="$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py" beforeDir="false" afterPath="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Robotik_KI_Exercise$Prediction.coverage" NAME="Prediction Coverage Results" MODIFIED="1541776101785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src" />
     <SUITE FILE_PATH="coverage/Robotik_KI_Exercise$mnist_cnn_modified.coverage" NAME="mnist_cnn_modified Coverage Results" MODIFIED="1541761411351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise_1/ai_train" />
     <SUITE FILE_PATH="coverage/Robotik_KI_Exercise$CameraPseudo.coverage" NAME="CameraPseudo Coverage Results" MODIFIED="1541684333156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src" />
   </component>
@@ -37,7 +35,7 @@
           <entry key="iml" value="1" />
           <entry key="launch" value="5" />
           <entry key="md" value="2" />
-          <entry key="py" value="5" />
+          <entry key="py" value="7" />
           <entry key="txt" value="2" />
           <entry key="xml" value="3" />
         </counts>
@@ -47,7 +45,7 @@
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="5" />
+          <entry key="Python" value="7" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -55,59 +53,74 @@
         <counts>
           <entry key="launch" value="1" />
           <entry key="md" value="16" />
-          <entry key="py" value="1137" />
+          <entry key="py" value="1723" />
+          <entry key="txt" value="164" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="16" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="1137" />
+          <entry key="PLAIN_TEXT" value="165" />
+          <entry key="Python" value="1723" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.6172953">
+    <splitter split-orientation="vertical" split-proportion="0.78932846">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2483">
-                  <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-                  <folding>
-                    <element signature="e#197#234#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="393">
-                  <caret line="146" column="10" selection-start-line="146" selection-start-column="10" selection-end-line="146" selection-end-column="10" />
-                  <folding>
-                    <element signature="e#23#53#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="304">
-                  <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#23#33#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1823">
+                      <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-end-line="126" />
+                      <folding>
+                        <element signature="e#197#234#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="279">
+                      <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+                      <folding>
+                        <element signature="e#23#53#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="706">
+                      <caret line="56" column="71" lean-forward="true" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
+                      <folding>
+                        <element signature="e#23#33#0" expanded="true" />
+                        <marker date="1541777992069" expanded="true" signature="1529:1530" ph="..." />
+                        <marker date="1541777992069" expanded="true" signature="1529:1538" ph="..." />
+                        <marker date="1541777992069" expanded="true" signature="1529:2079" ph="..." />
+                        <marker date="1541777992069" expanded="true" signature="1992:1993" ph="..." />
+                        <marker date="1541777992069" expanded="true" signature="2078:2079" ph="..." />
+                        <marker date="1541777992069" expanded="true" signature="2090:2095" ph="..." />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf>
@@ -115,7 +128,7 @@
             <entry file="file://$PROJECT_DIR$/excercise_1/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="228">
+                  <first_editor relative-caret-position="75">
                     <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
                   </first_editor>
                   <second_editor />
@@ -127,6 +140,12 @@
       </split-second>
     </splitter>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>subs</find>
+      <find>compressed_img_msgs</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -136,9 +155,9 @@
         <option value="$PROJECT_DIR$/excercise_1/README.md" />
         <option value="$PROJECT_DIR$/excercise_1/exercise_1.launch" />
         <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/excercise_1/launch/excercise_1.launch" />
-        <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" />
         <option value="$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py" />
         <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py" />
+        <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" />
       </list>
     </option>
   </component>
@@ -279,7 +298,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mnist_cnn_modified">
+  <component name="RunManager" selected="Python.Prediction">
     <configuration name="CameraPseudo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Robotik_KI_Exercise" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -294,6 +313,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Prediction" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Robotik_KI_Exercise" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -327,9 +368,11 @@
     <list>
       <item itemvalue="Python.CameraPseudo" />
       <item itemvalue="Python.mnist_cnn_modified" />
+      <item itemvalue="Python.Prediction" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Prediction" />
         <item itemvalue="Python.mnist_cnn_modified" />
         <item itemvalue="Python.CameraPseudo" />
       </list>
@@ -346,17 +389,25 @@
       <option name="presentableId" value="Default" />
       <updated>1541661442405</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add self-trained model with CNN on MNIST&#10;Add comments in CameraPseudo for better understanding&#10;Add readme with a brief description of this project">
+      <created>1541772864496</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541772864496</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="1105" width="2493" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1742146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119543046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32946634" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15931942" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -382,6 +433,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add self-trained model with CNN on MNIST&#10;Add comments in CameraPseudo for better understanding&#10;Add readme with a brief description of this project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add self-trained model with CNN on MNIST&#10;Add comments in CameraPseudo for better understanding&#10;Add readme with a brief description of this project" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/excercise_1/.idea/libraries/R_User_Library.xml">
@@ -431,42 +486,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/excercise_1/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="228">
-            <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2483">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="1823">
+          <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-end-line="126" />
           <folding>
             <element signature="e#197#234#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/excercise_1/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ros/melodic/lib/python2.7/dist-packages/rospy/topics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="858" column="8" selection-start-line="858" selection-start-column="8" selection-end-line="858" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="146" column="10" selection-start-line="146" selection-start-column="10" selection-end-line="146" selection-end-column="10" />
+        <state relative-caret-position="279">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="e#23#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="56" column="71" lean-forward="true" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <marker date="1541777992069" expanded="true" signature="1529:1530" ph="..." />
+            <marker date="1541777992069" expanded="true" signature="1529:1538" ph="..." />
+            <marker date="1541777992069" expanded="true" signature="1529:2079" ph="..." />
+            <marker date="1541777992069" expanded="true" signature="1992:1993" ph="..." />
+            <marker date="1541777992069" expanded="true" signature="2078:2079" ph="..." />
+            <marker date="1541777992069" expanded="true" signature="2090:2095" ph="..." />
           </folding>
         </state>
       </provider>
