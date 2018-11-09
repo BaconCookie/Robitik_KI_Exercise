@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+# Every Python ROS Node will have this ^^ declaration at the top. The first line makes sure your script is executed as a Python script.
 
 from cv_bridge import CvBridge
 
 import cv2
 import numpy as np
-import rospy
+import rospy  # You need to import rospy if you are writing a ROS Node.
 from keras.datasets import mnist
 from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Bool, Int32
@@ -19,15 +20,16 @@ class CameraPseudo:
         self.cv_bridge = CvBridge()
 
         # publish webcam
-        self.publisher_webcam_comprs = rospy.Publisher("/camera/output/webcam/compressed_img_msgs",
-                                                       CompressedImage,
-                                                       queue_size=1)
+        self.publisher_webcam_comprs = rospy.Publisher("/camera/output/webcam/compressed_img_msgs", # publishing about this topic
+                                                       CompressedImage,                             # message type
+                                                       queue_size=1)                                # limits the amount of queued messages if any subscriber is not receiving them fast enough
 
         if USE_WEBCAM:
             self.input_stream = cv2.VideoCapture(0)
             if not self.input_stream.isOpened():
                 raise Exception('Camera stream did not open\n')
 
+        # rospy defines the CameraPseudo's interface to the rest of ROS
         # publish specific
         self.publisher_specific_comprs = rospy.Publisher("/camera/output/specific/compressed_img_msgs",
                                                          CompressedImage,
@@ -52,7 +54,7 @@ class CameraPseudo:
                                                        queue_size=1)
 
         # use mnist data as pseudo webcam images
-        (_, _), (self.images, self.labels) = mnist.load_data()
+        (_, _), (self.images, self.labels) = mnist.load_data() #(_, _): load this, but it won't be used here
 
         rospy.loginfo("Publishing data...")
 
@@ -126,7 +128,9 @@ def main():
     verbose = 0  # use 1 for debug
 
     try:
-        # register node, name = camera_pseudo, anonymous says if there can only be one node like this
+        # register node
+        # name of node = camera_pseudo
+        # anonymous True ensures that your node has a unique name by adding random numbers to the end of NAME. False: there can only be one node like this.
         rospy.init_node('camera_pseudo', anonymous=False)
 
         # init CameraPseudo
@@ -137,6 +141,10 @@ def main():
 
     except rospy.ROSInterruptException:
         pass
+        # In addition to the standard Python __main__ check, this catches a rospy.ROSInterruptException exception,
+        # which can be thrown by rospy.sleep() and rospy.Rate.sleep() methods when Ctrl-C is pressed or your Node is
+        # otherwise shutdown. The reason this exception is raised is so that you don't accidentally continue executing
+        # code after the sleep().
 
 
 if __name__ == '__main__':

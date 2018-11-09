@@ -13,7 +13,16 @@ from std_msgs.msg import Bool, Int32
 class Prediction:
     def __init__(self):
         self.cv_bridge = CvBridge()
-        #TODO load keras modell etc.
+
+        self.sensor_msgs.msg = CompressedImage()
+
+        # load keras model, filepath = "models/weights-best.hdf5"
+        model = tf.keras.models.load_model(
+            "models/weights-best.hdf5",
+            custom_objects=None,
+            compile=True
+        )
+
 
 def main():
     try:
@@ -25,7 +34,15 @@ def main():
 
         rospy.spin()
 
-        #TODO while loop
+        # TODO while loop
+        while not rospy.is_shutdown():
+            print('rospy lives, while loop in Prediction')
+
+            # TODO publish/subscribe zeug, (gegenstück zu komprimierung nutzen um das bild lesen zu können)
+
+            # TODO benutze keras modell zum predicten
+
+            # TODO threads managen! sehe link in readme
 
     except rospy.ROSInterruptException:
         pass

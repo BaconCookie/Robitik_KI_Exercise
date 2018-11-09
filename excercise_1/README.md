@@ -34,7 +34,7 @@ Required part to pass course.
   * /camera/output/random/compressed_img_msgs
 * Subscribe for verification to
   * /camera/output/random/number
-* Since the images do NOT stay consistent, the image and according value will be published simultaneously. Safe if locally for verification.
+* Since the images do NOT stay consistent, the image and according value will be published simultaneously. Save if locally for verification.
 
 ### 3)
 * Write a `SOLUTION.md` concluding

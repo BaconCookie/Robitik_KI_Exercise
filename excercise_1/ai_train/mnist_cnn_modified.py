@@ -130,4 +130,4 @@ input_label = np.argmax(input_label, axis=None, out=None)
 # output
 print("prediction: %s" % (prediction,))
 print("real label: %s" % (input_label,))
-print(x_test[index])
+
