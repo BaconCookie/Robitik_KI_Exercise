@@ -68,7 +68,9 @@ class Prediction:
             compile=True
         )
 
-        # manage TensorFlow threads
+        # manage Keras/TensorFlow threads
+        # https://stackoverflow.com/questions/46725323/keras-tensorflow-exception-while-predicting-from-multiple-threads
+        self.model._make_predict_function()
         self.session = k.get_session()
         self.graph = tf.get_default_graph()
         self.graph.finalize()
