@@ -54,7 +54,7 @@
         <counts>
           <entry key="launch" value="1" />
           <entry key="md" value="16" />
-          <entry key="py" value="2159" />
+          <entry key="py" value="2504" />
           <entry key="txt" value="243" />
         </counts>
       </usages-collector>
@@ -62,7 +62,7 @@
         <counts>
           <entry key="Markdown" value="16" />
           <entry key="PLAIN_TEXT" value="244" />
-          <entry key="Python" value="2159" />
+          <entry key="Python" value="2504" />
         </counts>
       </usages-collector>
     </session>
@@ -88,8 +88,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="131">
-                      <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+                    <state relative-caret-position="1533">
+                      <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
                       <folding>
                         <element signature="e#23#53#0" expanded="true" />
                       </folding>
@@ -104,15 +104,16 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-1450">
-                      <caret line="2" column="10" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="10" />
+                    <state relative-caret-position="-519">
+                      <caret line="65" column="39" lean-forward="true" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
                       <folding>
-                        <marker date="1541929012817" expanded="true" signature="2403:2404" ph="..." />
-                        <marker date="1541929012817" expanded="true" signature="2403:2412" ph="..." />
-                        <marker date="1541929012817" expanded="true" signature="2403:3583" ph="..." />
-                        <marker date="1541929012817" expanded="true" signature="3394:3395" ph="..." />
-                        <marker date="1541929012817" expanded="true" signature="3582:3583" ph="..." />
-                        <marker date="1541929012817" expanded="true" signature="3594:3599" ph="..." />
+                        <element signature="e#23#33#0" expanded="true" />
+                        <marker date="1541930418548" expanded="true" signature="2536:2537" ph="..." />
+                        <marker date="1541930418548" expanded="true" signature="2536:2545" ph="..." />
+                        <marker date="1541930418548" expanded="true" signature="2536:4024" ph="..." />
+                        <marker date="1541930418548" expanded="true" signature="3716:3717" ph="..." />
+                        <marker date="1541930418548" expanded="true" signature="4023:4024" ph="..." />
+                        <marker date="1541930418548" expanded="true" signature="4035:4040" ph="..." />
                       </folding>
                     </state>
                   </provider>
@@ -157,8 +158,8 @@
         <option value="$PROJECT_DIR$/excercise_1/exercise_1.launch" />
         <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/excercise_1/launch/excercise_1.launch" />
         <option value="$PROJECT_DIR$/excercise_1/ai_train/mnist_cnn_modified.py" />
-        <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" />
         <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py" />
+        <option value="$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py" />
       </list>
     </option>
   </component>
@@ -411,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541928773557</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add my solution for Exercise 2 in Prediction.py and also impl in CameraPseudo.py">
+      <created>1541929024687</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541929024687</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -520,6 +528,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2394" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/excercise_1/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -530,32 +543,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/numpy/__init__.py">
+    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2394" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1450">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="1533">
+          <caret line="104" column="65" lean-forward="true" selection-start-line="104" selection-start-column="65" selection-end-line="104" selection-end-column="65" />
           <folding>
-            <marker date="1541929012817" expanded="true" signature="2403:2404" ph="..." />
-            <marker date="1541929012817" expanded="true" signature="2403:2412" ph="..." />
-            <marker date="1541929012817" expanded="true" signature="2403:3583" ph="..." />
-            <marker date="1541929012817" expanded="true" signature="3394:3395" ph="..." />
-            <marker date="1541929012817" expanded="true" signature="3582:3583" ph="..." />
-            <marker date="1541929012817" expanded="true" signature="3594:3599" ph="..." />
+            <element signature="e#23#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/camera_pseudo/src/CameraPseudo.py">
+    <entry file="file://$PROJECT_DIR$/excercise_1/catkin_ws/src/prediction/src/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        <state relative-caret-position="-519">
+          <caret line="65" column="39" lean-forward="true" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
           <folding>
-            <element signature="e#23#53#0" expanded="true" />
+            <element signature="e#23#33#0" expanded="true" />
+            <marker date="1541930418548" expanded="true" signature="2536:2537" ph="..." />
+            <marker date="1541930418548" expanded="true" signature="2536:2545" ph="..." />
+            <marker date="1541930418548" expanded="true" signature="2536:4024" ph="..." />
+            <marker date="1541930418548" expanded="true" signature="3716:3717" ph="..." />
+            <marker date="1541930418548" expanded="true" signature="4023:4024" ph="..." />
+            <marker date="1541930418548" expanded="true" signature="4035:4040" ph="..." />
           </folding>
         </state>
       </provider>

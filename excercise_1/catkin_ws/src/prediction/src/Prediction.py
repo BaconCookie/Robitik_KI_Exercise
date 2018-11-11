@@ -11,10 +11,16 @@ from std_msgs.msg import Bool, Int32
 
 
 class Prediction:
+
+    current_predicted_random_number = 42
+
+
     def __init__(self):
         self.cv_bridge = CvBridge()
 
-        self.sensor_msgs.msg = CompressedImage()
+        #Todo check if following is needed:
+        # self.sensor_msgs.msg = CompressedImage()
+
 
         ### SPECIFIC IMAGE ###
         # SUBSCRIBE
@@ -32,7 +38,8 @@ class Prediction:
         self.publish_predicted_specific = rospy.Publisher('/camera/input/specific/number',
                                                  Int32,
                                                  queue_size=1)
-        ###
+        ### ----- ###
+
 
         ### RANDOM IMAGE ###
         # SUBSCRIBE
@@ -46,10 +53,12 @@ class Prediction:
                          Int32,
                          self.verify_own_prediction_random)
 
-        # PUBLISH to '/camera/input/random/number'
-        self.publish_predicted_random = rospy.Publisher('/camera/input/random/number',
-                                                 Int32,
-                                                 queue_size=1)
+        # # PUBLISH to '/camera/input/random/number'
+        # self.publish_predicted_random = rospy.Publisher('/camera/input/random/number',
+        #                                          Int32,
+        #                                          queue_size=1)
+
+        ### ----- ###
 
 
         # load keras model, filepath = "models/weights-best.hdf5"
@@ -87,16 +96,21 @@ class Prediction:
         # revert from one-hot encoding
         prediction_as_real_number = np.argmax(prediction, axis=None, out=None)
 
-        # publish result of prediction to /camera/input/specific/number
-        self.publish_predicted_random.publish(prediction_as_real_number)
+        # for verification: save value in global scope of this class
+        global current_predicted_random_number
+        current_predicted_random_number = prediction_as_real_number
+
+        # # publish result of prediction to /camera/input/specific/number
+        # self.publish_predicted_random.publish(prediction_as_real_number)
 
 
     def verify_own_prediction_specific(self, bool):
-        print('prediction was: ', bool)
+        print('Prediction of specific number was: ', bool)
 
 
-    def verify_own_prediction_random(self, bool):
-        print('prediction was: ', bool)
+    def verify_own_prediction_random(self, number):
+        result =  True if number == current_predicted_random_number else False
+        print('Prediction of random number was: ', result)
 
 
 def main():
@@ -110,8 +124,9 @@ def main():
         # spin() simply keeps python from exiting until this node is stopped
         rospy.spin()
 
-        while not rospy.is_shutdown():
-            pred.publish_predicted_specific
+        #Todo check if while loop /function calls are needed
+        # while not rospy.is_shutdown():
+        #     pred.publish_predicted_specific
 
 
     except rospy.ROSInterruptException:
