@@ -15,6 +15,7 @@ class Prediction:
     current_predicted_random_number = 42
 
 
+
     def __init__(self):
         self.cv_bridge = CvBridge()
 
@@ -63,7 +64,7 @@ class Prediction:
 
         # load keras model, filepath = "models/weights-best.hdf5"
         self.model = tf.keras.models.load_model(
-            "models/weights-best.hdf5",
+            "./weights-best.hdf5",
             custom_objects=None,
             compile=True
         )
