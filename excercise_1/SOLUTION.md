@@ -90,7 +90,7 @@ MNIST = Dataset of 60.000 handwritten digits (0-9)
     * converts the CompressedImage to cv2 format
     * predicts the number on the received image using the above mentioned trained model (returns the number one-hot encoded)
     * converts the one-hot encoded number to the corresponding the real class number (Int32)
-    * for verification purposes the predicted value is being saved in global scope of this class
+    * for verification purposes the predicted value is being saved in global scope of this class and some sleep is being added for synchronization
     * verification: compares the beforehand received correct label with its own predicted value
     * prints outcome of verification
 

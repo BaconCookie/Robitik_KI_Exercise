@@ -55,13 +55,6 @@ class CameraPseudo:
                                                        CompressedImage,
                                                        queue_size=1)
 
-
-
-        # # subscriber random
-        # rospy.Subscriber('/camera/input/random/number',
-        #                  Int32,
-        #                  self.camera_random_callback)
-
         # use mnist data as pseudo webcam images
         (_, _), (self.images, self.labels) = mnist.load_data() #(_, _): load this, but it won't be used here
 
@@ -73,14 +66,6 @@ class CameraPseudo:
 
         # publish result
         self.publisher_specific_check.publish(result)
-
-    # def camera_random_callback(self, msg):
-    #     # check if input is same as defined value
-    #     ## gets last saved label of random generated number
-    #     result = True if msg.data == self.labels[random_ints[-1]] else False
-    #
-    #     # publish result
-    #     self.publisher_specific_check.publish(result)
 
     def publish_data(self, verbose=0):
         rate = rospy.Rate(PUBLISH_RATE)
@@ -117,9 +102,6 @@ class CameraPseudo:
         # get image and number based on random value
         number = self.labels[rand_int]
         image = self.images[rand_int]
-
-        # ## add label of random number to local list for verfication later on
-        # random_ints.append(number)
 
         # convert to msg
         compressed_imgmsg = self.cv_bridge.cv2_to_compressed_imgmsg(image)

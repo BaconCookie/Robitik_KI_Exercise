@@ -11,7 +11,6 @@ from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Bool, Int32
 
 filepath = '/home/laura/PycharmProjects/Robotik_KI_Exercise/excercise_1/ai_train/models/weights-best.hdf5'
-current_predicted_random_number = 42
 predicted_randoms = []
 PUBLISH_RATE = 3  # hz
 
@@ -21,18 +20,13 @@ class Prediction:
     def __init__(self):
         self.cv_bridge = CvBridge()
 
-        #Todo check if following is needed:
-        # self.sensor_msgs.msg = CompressedImage()
-
-
-        ### SPECIFIC IMAGE ###
-        # SUBSCRIBE
-        # subscribe to receive image data from /camera/output/specific/compressed_img_msgs
+        ### SPECIFIC IMAGE ##############################################################
+        # SUBSCRIBE to receive image data from /camera/output/specific/compressed_img_msgs
         rospy.Subscriber('camera/output/specific/compressed_img_msgs',
                          CompressedImage,
                          self.handle_received_img_specific)
 
-        #Subscribe to /camera/output/specific/check to verify own prediction
+        # SUBSCRIBE to /camera/output/specific/check to verify own prediction
         rospy.Subscriber('/camera/output/specific/check',
                          Bool,
                          self.verify_own_prediction_specific)
@@ -41,35 +35,23 @@ class Prediction:
         self.publish_predicted_specific = rospy.Publisher('/camera/input/specific/number',
                                                  Int32,
                                                  queue_size=1)
-        ### ----- ###
+        #################################################################################
 
-
-        ### RANDOM IMAGE ###
-        # SUBSCRIBE
-        # Subscribe to /camera/output/random/number to verify own prediction
+        ### RANDOM IMAGE ################################################################
+        # SUBSCRIBE to /camera/output/random/number to verify own prediction
         rospy.Subscriber('/camera/output/random/number',
                          Int32,
                          self.verify_own_prediction_random)
 
-        # subscribe to receive image data from /camera/output/random/compressed_img_msgs
+        # SUBSCRIBE to receive image data from /camera/output/random/compressed_img_msgs
         rospy.Subscriber('/camera/output/random/compressed_img_msgs',
                          CompressedImage,
                          self.handle_received_img_random)
+        #################################################################################
 
-        # # PUBLISH to '/camera/input/random/number'
-        # self.publish_predicted_random = rospy.Publisher('/camera/input/random/number',
-        #                                          Int32,
-        #                                          queue_size=1)
-
-        ### ----- ###
 
         # load keras model, filepath = "models/weights-best.hdf5"
         self.model = load_model(filepath = filepath)
-        # self.model = tf.keras.models.load_model(
-        #     "weights-best.hdf5",
-        #     custom_objects=None,
-        #     compile=True
-        # )
 
         # manage Keras/TensorFlow threads
         # https://stackoverflow.com/questions/46725323/keras-tensorflow-exception-while-predicting-from-multiple-threads
@@ -79,12 +61,9 @@ class Prediction:
         self.graph.finalize()
 
     def convert_image(self, img):
-        a = self.cv_bridge.compressed_imgmsg_to_cv2(img)
-        #print('a',a.shape)                  #('a', (28, 28))
-        b = np.expand_dims(a, axis=2)
-        #print('b',b.shape)                  #('b', (28, 28, 1))
-        c = np.expand_dims(b, axis=0)
-        #print('c',c.shape)                  #('c', (1, 28, 28, 1))
+        a = self.cv_bridge.compressed_imgmsg_to_cv2(img) #('a', (28, 28))
+        b = np.expand_dims(a, axis=2) #('b', (28, 28, 1))
+        c = np.expand_dims(b, axis=0) #('c', (1, 28, 28, 1))
         return c
 
     def handle_received_img_specific(self, img):
@@ -104,53 +83,41 @@ class Prediction:
         prediction = self.model.predict(image)
         # revert from one-hot encoding
         prediction_as_real_number = np.argmax(prediction, axis=None, out=None)
-
-        #TODO VERFICATION
         # for verification: save value in global scope of this class
-        global current_predicted_random_number
-        current_predicted_random_number = prediction_as_real_number
         global predicted_randoms
         predicted_randoms.append(prediction_as_real_number)
 
-        # # publish result of prediction to /camera/input/specific/number
-        # self.publish_predicted_random.publish(prediction_as_real_number)
 
     def verify_own_prediction_specific(self, bool):
-        print('Prediction of specific number was: ', bool)
+        print'Prediction of specific number was: {}'.format(bool)
 
-    #TODO VERFICATION
     def verify_own_prediction_random(self, number):
-        print('### Prediction of predicted number: ###')
-
-        print('Predicted randoms before verify:', predicted_randoms)
+        print('######  Prediction of random number:  ######')
+        # add sleep to the verification of random numbers for synchronization with the camera
         rate = rospy.Rate(PUBLISH_RATE)
         rate.sleep()
-
         try:
             self.verify_helper(number, -2)
 
         except (IndexError):
             try:
                 self.verify_helper(number, -1)
-                extra_sleep_rate = rospy.Rate(10)
+                # add a little bit of extra sleep during startup phase
+                extra_sleep_rate = rospy.Rate(10) # hz
                 extra_sleep_rate.sleep()
+
             except (IndexError):
                 print('Patience please!')
             pass
 
-
     def verify_helper(self, number, index):
         number = number.data
         predicted = predicted_randoms.__getitem__(index)
-        # predicted = predicted_randoms.pop()
-        # result =  True if number == current_predicted_random_number else False
         result = True if number == predicted else False
-        print('Predicted randoms:', predicted_randoms)
-        print(' predicted:', predicted)
-        print'Actual number: {} predicted: {}'.format(number, predicted)
-
-        print('Prediction of predicted number was: ', result)
-        print('####################################')
+        print'Saved predicted randoms:{}'.format(predicted_randoms)
+        print'Actual: {} Predicted: {}'.format(number, predicted)
+        print'Prediction of random number was: {}'.format(result)
+        print('############################################')
 
 def main():
     try:
@@ -162,10 +129,6 @@ def main():
 
         # spin() simply keeps python from exiting until this node is stopped
         rospy.spin()
-
-        #Todo check if while loop /function calls are needed
-        # while not rospy.is_shutdown():
-        #     pred.publish_predicted_specific
 
     except rospy.ROSInterruptException:
         pass
