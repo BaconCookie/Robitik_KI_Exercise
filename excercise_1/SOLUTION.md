@@ -98,8 +98,11 @@ MNIST = Dataset of 60.000 handwritten digits (0-9)
 **rqt** The rqt_graph plugin provides introspection and visualization of a live ROS system, showing nodes and the 
 connections between them, and allowing you to easily debug and understand your running system and how it is structured.
 
+Run your ROS Program, and then (in a new terminal) run: **rosrun rqt_graph rqt_graph**
 
+![alt text](rosgraph.png "my rosgraph")
 
 Sources: 
 - http://wiki.ros.org/rqt, last visited 11.11.2018
 - http://www.ros.org/core-components/, last visited 11.11.2018
+- http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics, last visited 21.11.2018
