@@ -100,7 +100,7 @@ connections between them, and allowing you to easily debug and understand your r
 
 Run your ROS Program, and then (in a new terminal) run: **rosrun rqt_graph rqt_graph**
 
-![alt text](rosgraph.png "my rosgraph")
+![alt text](rosgraph.png "my rosgraph") 
 
 Sources: 
 - http://wiki.ros.org/rqt, last visited 11.11.2018
