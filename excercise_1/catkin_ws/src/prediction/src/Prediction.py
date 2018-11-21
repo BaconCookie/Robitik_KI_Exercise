@@ -5,15 +5,17 @@ import numpy as np
 import rospy
 import tensorflow as tf
 from keras import backend as k
+from keras.models import load_model
 from cv_bridge import CvBridge
 from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Bool, Int32
+
+filepath = '/home/laura/PycharmProjects/Robotik_KI_Exercise/excercise_1/ai_train/models/weights-best.hdf5'
 
 
 class Prediction:
 
     current_predicted_random_number = 42
-
 
 
     def __init__(self):
@@ -63,11 +65,12 @@ class Prediction:
 
 
         # load keras model, filepath = "models/weights-best.hdf5"
-        self.model = tf.keras.models.load_model(
-            "./weights-best.hdf5",
-            custom_objects=None,
-            compile=True
-        )
+        self.model = load_model(filepath = filepath)
+        # self.model = tf.keras.models.load_model(
+        #     "weights-best.hdf5",
+        #     custom_objects=None,
+        #     compile=True
+        # )
 
         # manage Keras/TensorFlow threads
         # https://stackoverflow.com/questions/46725323/keras-tensorflow-exception-while-predicting-from-multiple-threads
@@ -76,10 +79,19 @@ class Prediction:
         self.graph = tf.get_default_graph()
         self.graph.finalize()
 
+    def convert_image(self, img):
+        a = self.cv_bridge.compressed_imgmsg_to_cv2(img)
+        #print('a',a.shape)                  #('a', (28, 28))
+        b = np.expand_dims(a, axis=2)
+        #print('b',b.shape)                  #('b', (28, 28, 1))
+        c = np.expand_dims(b, axis=0)
+        #print('c',c.shape)                  #('c', (1, 28, 28, 1))
+        return c
+
 
     def handle_received_img_specific(self, img):
         # convert img
-        image = self.cv_bridge.compressed_imgmsg_to_cv2(img)
+        image = self.convert_image(img)
 
         # use keras model to predict the content (number 0-9) on the image
         prediction = self.model.predict(image)
@@ -92,7 +104,7 @@ class Prediction:
 
     def handle_received_img_random(self, img):
         # convert img
-        image = self.cv_bridge.compressed_imgmsg_to_cv2(img)
+        image = self.convert_image(img)
 
         # use keras model to predict the content (number 0-9) on the image
         prediction = self.model.predict(image)
