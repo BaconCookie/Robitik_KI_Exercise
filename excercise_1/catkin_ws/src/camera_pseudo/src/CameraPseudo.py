@@ -47,13 +47,15 @@ class CameraPseudo:
                          self.camera_specific_callback)
 
         # publisher random
+        self.publisher_random_number = rospy.Publisher("/camera/output/random/number",
+                                                       Int32,
+                                                       queue_size=1)
+
         self.publisher_random_comprs = rospy.Publisher("/camera/output/random/compressed_img_msgs",
                                                        CompressedImage,
                                                        queue_size=1)
 
-        self.publisher_random_number = rospy.Publisher("/camera/output/random/number",
-                                                       Int32,
-                                                       queue_size=1)
+
 
         # # subscriber random
         # rospy.Subscriber('/camera/input/random/number',
@@ -113,8 +115,8 @@ class CameraPseudo:
         rand_int = np.random.randint(0, len(self.labels), dtype='int')
 
         # get image and number based on random value
-        image = self.images[rand_int]
         number = self.labels[rand_int]
+        image = self.images[rand_int]
 
         # ## add label of random number to local list for verfication later on
         # random_ints.append(number)
@@ -123,8 +125,8 @@ class CameraPseudo:
         compressed_imgmsg = self.cv_bridge.cv2_to_compressed_imgmsg(image)
 
         # publish data
-        self.publisher_random_comprs.publish(compressed_imgmsg)
         self.publisher_random_number.publish(number)
+        self.publisher_random_comprs.publish(compressed_imgmsg)
 
         if verbose:
             rospy.loginfo(compressed_imgmsg.header.seq)
