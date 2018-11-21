@@ -10,12 +10,12 @@ from cv_bridge import CvBridge
 from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Bool, Int32
 
+
 filepath = '/home/laura/PycharmProjects/Robotik_KI_Exercise/excercise_1/ai_train/models/weights-best.hdf5'
+current_predicted_random_number = 42
 
 
 class Prediction:
-
-    current_predicted_random_number = 42
 
 
     def __init__(self):
@@ -79,6 +79,7 @@ class Prediction:
         self.graph = tf.get_default_graph()
         self.graph.finalize()
 
+
     def convert_image(self, img):
         a = self.cv_bridge.compressed_imgmsg_to_cv2(img)
         #print('a',a.shape)                  #('a', (28, 28))
@@ -92,12 +93,10 @@ class Prediction:
     def handle_received_img_specific(self, img):
         # convert img
         image = self.convert_image(img)
-
         # use keras model to predict the content (number 0-9) on the image
         prediction = self.model.predict(image)
         # revert from one-hot encoding
         prediction_as_real_number = np.argmax(prediction, axis=None, out=None)
-
         # publish result of prediction to /camera/input/specific/number
         self.publish_predicted_specific.publish(prediction_as_real_number)
 
@@ -105,12 +104,10 @@ class Prediction:
     def handle_received_img_random(self, img):
         # convert img
         image = self.convert_image(img)
-
         # use keras model to predict the content (number 0-9) on the image
         prediction = self.model.predict(image)
         # revert from one-hot encoding
         prediction_as_real_number = np.argmax(prediction, axis=None, out=None)
-
         # for verification: save value in global scope of this class
         global current_predicted_random_number
         current_predicted_random_number = prediction_as_real_number
@@ -124,8 +121,9 @@ class Prediction:
 
 
     def verify_own_prediction_random(self, number):
+        number = number.data
         result =  True if number == current_predicted_random_number else False
-        print('Prediction of random number was: ', result)
+        print('Prediction of random number was: ', number, current_predicted_random_number, result)
 
 
 def main():
